@@ -3,7 +3,10 @@
   <div class="card-wrapper">
     <Spinner v-if="!success"></Spinner>
     <div v-if="success" class="user-ca">
-      <div class="user-avatar"></div>
+      <div
+        class="user-avatar"
+        :style="{ backgroundImage: 'url(' + userdata.avatarUrl + ')' }"
+      ></div>
       <div class="user-details">
         <h1>{{ userdata.fullname }}</h1>
         <div class="row">
@@ -89,7 +92,6 @@ export default {
   box-sizing: content-box;
   height: 110px;
   width: 110px;
-  background: url(https://avatars.githubusercontent.com/u/78700168?v=4);
   background-size: cover;
   background-position: center;
   border-radius: 50%;
